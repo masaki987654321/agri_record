@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: 2020-08-03
+  title: MyString
+  place: MyString
+  content: MyText
+  number: 1
+  time: 1.5
+  recorder: MyString
+
+two:
+  date: 2020-08-03
+  title: MyString
+  place: MyString
+  content: MyText
+  number: 1
+  time: 1.5
+  recorder: MyString
