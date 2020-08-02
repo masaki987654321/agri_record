@@ -11,42 +11,46 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :date %>
-    <%= form.date_select :date, id: :record_date %>
+  <div class="field form-group">
+    <%= form.label :日付%>
+    <%= form.text_field :date, {:class => ["form-control", "datepicker"]} %>
   </div>
 
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title, id: :record_title %>
+  <div class="field form-group">
+    <%= form.label :タイトル %>
+    <%= form.text_field :title, :class => "form-control" %>
   </div>
 
-  <div class="field">
-    <%= form.label :place %>
-    <%= form.text_field :place, id: :record_place %>
+  <div class="field form-group">
+    <%= form.label :作業場所 %>
+    <%= form.select(:place, [['根下', '根下'], ['中沢', '中沢'], ['永塚', '永塚'], ['屋敷', '屋敷']], {}, {class: "form-control"}) %>
   </div>
 
-  <div class="field">
-    <%= form.label :content %>
-    <%= form.text_area :content, id: :record_content %>
+  <div class="field form-group">
+    <%= form.label :作業内容 %>
+    <%= form.text_area :content, :class => "form-control" %>
   </div>
 
-  <div class="field">
-    <%= form.label :number %>
-    <%= form.number_field :number, id: :record_number %>
+  <div class="field form-group">
+    <%= form.label :作用人数 %>
+    <%= form.select(:number, [['1人', 1], ['2人', 2], ['3人', 3], ['4人', 4], ['5人', 5]], {}, {class: "form-control"}) %>
   </div>
 
-  <div class="field">
-    <%= form.label :time %>
-    <%= form.text_field :time, id: :record_time %>
+  <div class="field form-group">
+    <%= form.label :作業時間（分） %>
+    <%= form.text_field :time, :class => "form-control" %>
   </div>
 
-  <div class="field">
-    <%= form.label :recorder %>
-    <%= form.text_field :recorder, id: :record_recorder %>
+  <div class="field form-group">
+    <%= form.label :記録者 %>
+    <%= form.text_field :recorder, :class => "form-control" %>
   </div>
 
   <div class="actions">
     <%= form.submit %>
   </div>
 <% end %>
+
+<script>
+  $('.datepicker').datepicker();
+</script>
