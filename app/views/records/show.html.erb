@@ -33,4 +33,11 @@
 
 <%= simple_format(@record.content) %>
 
-<%= button_to '編集', edit_record_path(@record) , {method: :get, class: "btn btn-outline-primary"} %>
+<div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+  <div class="btn-group mr-2" role="group" aria-label="First group">
+    <%= button_to '編集', edit_record_path(@record) , {method: :get, class: "btn btn-outline-primary"} %>
+  </div>
+  <div class="btn-group mr-2" role="group" aria-label="Second group">
+    <%= button_to '削除', @record, {method: :delete, class: "btn btn-outline-danger", data: { confirm: '記録を削除します' }} %>
+  </div>
+</div>
