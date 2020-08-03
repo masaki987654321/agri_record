@@ -2,39 +2,36 @@
 
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Date:</strong>
-  <%= @record.date %>
-</p>
-
-<p>
-  <strong>Title:</strong>
+<h2 style="padding: 30px 0px 30px 0px;">
   <%= @record.title %>
-</p>
+</h2>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">日付</th>
+      <th scope="col">作業場所</th>
+      <th scope="col">作業人数</th>
+      <th scope="col">作業時間</th>
+      <th scope="col">記録者</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= @record.date %></td>
+      <td><%= @record.place %></td>
+      <td><%= @record.number %></td>
+      <td><%= @record.time %></td>
+      <td><%= @record.recorder %></td>
+    </tr>
+  </tbody>
+</table>
 
 <p>
-  <strong>Place:</strong>
-  <%= @record.place %>
+  <strong>作業内容</strong>
 </p>
-
 <p>
-  <strong>Content:</strong>
   <%= @record.content %>
-</p>
-
-<p>
-  <strong>Number:</strong>
-  <%= @record.number %>
-</p>
-
-<p>
-  <strong>Time:</strong>
-  <%= @record.time %>
-</p>
-
-<p>
-  <strong>Recorder:</strong>
-  <%= @record.recorder %>
 </p>
 
 <%= button_to '編集', edit_record_path(@record) , {method: :get, class: "btn btn-outline-primary"} %>
